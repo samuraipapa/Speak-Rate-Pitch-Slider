@@ -19,47 +19,50 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
     var myPitch: Float = 0.99
     var myVolume: Float = 0.50
     
-    var langCodeAll38 = [("ar-SA","Arabic","Saudi Arabia"),
+    var currentLang = ("en-US",       "English",     "United States","")
     
-    ("cs-CZ", "Czech", "Czech Republic"),
-    ("da-DK", "Danish","Denmark")
+    var langCodeAll38 = [("ar-SA","Arabic","Saudi Arabia","اللغة العربية"),
     
-    ]
-/*
-    de-DE       German      Germany
-    el-GR       Modern Greek        Greece
-    en-AU       English     Australia
-    en-GB       English     United Kingdom
-    en-IE       English     Ireland
-    en-US       English     United States
-    en-ZA       English     South Africa
-    es-ES       Spanish     Spain
-    es-MX       Spanish     Mexico
-    fi-FI       Finnish     Finland
-    fr-CA       French      Canada
-    fr-FR       French      France
-    he-IL       Hebrew      Israel
-    hi-IN       Hindi       India
-    hu-HU       Hungarian       Hungary
-    id-ID       Indonesian      Indonesia
-    it-IT       Italian     Italy
-    ja-JP       Japanese        Japan
-    ko-KR       Korean      Republic of Korea
-    nl-BE       Dutch       Belgium
-    nl-NL       Dutch       Netherlands
-    no-NO       Norwegian       Norway
-    pl-PL       Polish      Poland
-    pt-BR       Portuguese      Brazil
-    pt-PT       Portuguese      Portugal
-    ro-RO       Romanian        Romania
-    ru-RU       Russian     Russian Federation
-    sk-SK       Slovak      Slovakia
-    sv-SE       Swedish     Sweden
-    th-TH       Thai        Thailand
-    tr-TR       Turkish     Turkey
-    zh-CN       Chinese     China
-    zh-HK       Chinese     Hong Kong
-    zh-TW       Chinese     Taiwan
+    ("cs-CZ", "Czech", "Czech Republic","český"),
+    ("da-DK", "Danish","Denmark","Dansk")
+    
+    
+    
+    ("de-DE",       "German",      "Germany","Deutsche"),
+    ("el-GR",      "Modern Greek",        "Greece","ελληνική"),
+    ("en-AU",     "English",     "Australia"),
+    ("en-GB",     "English",     "United Kingdom"),
+    ("en-IE",      "English",     "Ireland"),
+    ("en-US",       "English",     "United States"),
+    ("en-ZA",       "English",     "South Africa"),
+    ("es-ES",       "Spanish",     "Spain"),
+    ("es-MX",       "Spanish",     "Mexico"),
+    ("fi-FI",       "Finnish",     "Finland"),
+    ("fr-CA",       "French",      "Canada"),
+    ("fr-FR",       "French",      "France"),
+    ("he-IL",       "Hebrew",      "Israel"),
+    ("hi-IN",       "Hindi",       "India"),
+    ("hu-HU",       "Hungarian",    "Hungary"),
+    ("id-ID",       "Indonesian",    "Indonesia"),
+    ("it-IT",       "Italian",     "Italy"),
+    ("ja-JP",       "Japanese",     "Japan"),
+    ("ko-KR",       "Korean",      "Republic of Korea"),
+    ("nl-BE",       "Dutch",       "Belgium"),
+    ("nl-NL",       "Dutch",       "Netherlands"),
+    ("no-NO",       "Norwegian",    "Norway"),
+    ("pl-PL",       "Polish",      "Poland"),
+    ("pt-BR",       "Portuguese",      "Brazil"),
+    ("pt-PT",       "Portuguese",      "Portugal"),
+    ("ro-RO",       "Romanian",        "Romania"),
+    ("ru-RU",       "Russian",     "Russian Federation"),
+    ("sk-SK",       "Slovak",      "Slovakia"),
+    ("sv-SE",       "Swedish",     "Sweden"),
+    ("th-TH",       "Thai",        "Thailand"),
+    ("tr-TR",       "Turkish",     "Turkey"),
+    ("zh-CN",       "Chinese",     "China"),
+    ("zh-HK",       "Chinese",   "Hong Kong"),
+    ("zh-TW",       "Chinese",     "Taiwan")
+                    ]
 */
 
 // UI Elements [Outlets]
@@ -88,10 +91,10 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
     
     @IBAction func speakButtonPressed(sender: UIButton) {
     
-        let myUtterance = AVSpeechUtterance(string: "English")
+        let myUtterance = AVSpeechUtterance(string: currentLang.3)
         myUtterance.rate = myRate
         myUtterance.pitchMultiplier = myPitch
-        myUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        myUtterance.voice = AVSpeechSynthesisVoice(language: currentLang.0)
         mySpeechSynth.speakUtterance(myUtterance)
   
         
@@ -113,6 +116,11 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
         
         return myString
     }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        currentLang = langCodeAll38[row]
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
