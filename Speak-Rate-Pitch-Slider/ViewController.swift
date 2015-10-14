@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
 
     
     //  ViewController Class-Wide Variables
@@ -97,6 +97,22 @@ class ViewController: UIViewController {
         
     }
     
+    //MARK - UIPickerView Methods
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return langCodeAll38.count
+    }
+    
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        let myString = "\(langCodeAll38[row].1) of \(langCodeAll38[row].2)"
+        
+        return myString
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

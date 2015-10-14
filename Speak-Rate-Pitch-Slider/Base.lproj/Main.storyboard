@@ -88,6 +88,14 @@
                                     <action selector="speakButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jbN-K0-dbU"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NEo-r9-b4x">
+                                <rect key="frame" x="0.0" y="-24" width="320" height="216"/>
+                                <animations/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="YSL-I7-hhk"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="DLG-zT-Qgz"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
