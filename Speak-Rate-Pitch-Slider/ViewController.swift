@@ -46,7 +46,7 @@ class ViewController: UIViewController {
     
         let myUtterance = AVSpeechUtterance(string: "English")
         myUtterance.rate = myRate
-        myUtterance.pitchMultiplier = Float(myPitch)
+        myUtterance.pitchMultiplier = myPitch
         myUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
         mySpeechSynth.speakUtterance(myUtterance)
   
