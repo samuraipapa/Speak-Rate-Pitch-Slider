@@ -88,8 +88,8 @@
                                     <action selector="speakButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jbN-K0-dbU"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NEo-r9-b4x">
-                                <rect key="frame" x="0.0" y="28" width="320" height="134"/>
+                            <pickerView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NEo-r9-b4x">
+                                <rect key="frame" x="0.0" y="28" width="320" height="123"/>
                                 <animations/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="YSL-I7-hhk"/>

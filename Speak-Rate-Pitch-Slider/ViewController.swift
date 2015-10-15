@@ -92,15 +92,23 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
     }
     
     @IBAction func speakButtonPressed(sender: UIButton) {
+        speakThisString()
+        
+    }
     
+    func speakThisString(){
+    
+        mySpeechSynth.stopSpeakingAtBoundary(AVSpeechBoundary.Immediate)
+        
         let myUtterance = AVSpeechUtterance(string: currentLang.3)
         myUtterance.rate = myRate
         myUtterance.pitchMultiplier = myPitch
         myUtterance.volume = myVolume
         myUtterance.voice = AVSpeechSynthesisVoice(language: currentLang.0)
         mySpeechSynth.speakUtterance(myUtterance)
-  
         
+
+    
     }
     
     //MARK - UIPickerView Methods
@@ -122,6 +130,7 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         currentLang = langCodeAll38[row]
+        speakThisString()
     }
     
     
