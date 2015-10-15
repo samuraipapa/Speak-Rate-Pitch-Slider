@@ -30,9 +30,6 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
     ("ar-SA","Arabic","Saudi Arabia","العربية","🇸🇦"),
     ("cs-CZ", "Czech", "Czech Republic","český","🇨🇿"),
     ("da-DK", "Danish","Denmark","Dansk","🇩🇰"),
-    
-    
-    
     ("de-DE",       "German", "Germany", "Deutsche","🇩🇪"),
     ("el-GR",      "Modern Greek",        "Greece","ελληνική","🇬🇷"),
     ("en-AU",     "English",     "Australia","Aussie","🇦🇺"),
