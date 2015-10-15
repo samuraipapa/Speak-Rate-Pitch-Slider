@@ -6,6 +6,8 @@
 //  Copyright © 2015 yuryg. All rights reserved.
 //
 
+// todo: add speech visual swipe effect.
+
 import UIKit
 import AVFoundation
 
@@ -79,16 +81,21 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
     @IBAction func rateSliderMoved(sender: UISlider) {
         rateNumLabel.text =  String(sender.value)
         myRate = sender.value
+        speakThisString()
+
     }
     
     @IBAction func pitchSliderMoved(sender: UISlider) {
         pitchNumLabel.text = String(sender.value)
         myPitch = sender.value
+        speakThisString()
     }
     
     @IBAction func volumeSliderMoved(sender: UISlider) {
         volumeNumLabel.text = String(sender.value)
         myVolume = sender.value
+        speakThisString()
+
     }
     
     @IBAction func speakButtonPressed(sender: UIButton) {
